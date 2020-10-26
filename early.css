@@ -8,7 +8,7 @@ body{
   margin: 100px auto;
   text-align: center;
   background-color: #F6F6F6;
-  height: 800px;
+  height: 850px;
   @include background(linear-gradient(top, rgba(#F6F6F6, 0), #FCFCFC), linear-gradient(top, rgba(#F6F6F6, 1), rgba(#F6F6F6, 1) $linespace, #EAEAEA $linespace, #EAEAEA $linespace + 1px));
 
   background-size: 100%, 100% $linespace + 1px;
@@ -36,3 +36,6 @@ body{
    line-height: 22px;
    font-family: 'Gelasio', serif;
  }
+#smol{
+  font-size: 12px;
+}
