@@ -1,0 +1,38 @@
+body{
+  background-color: #F7DC6F
+}
+.notepad {
+  position: relative;
+  width: 80%;
+  padding: 30px;
+  margin: 100px auto;
+  text-align: center;
+  background-color: #F6F6F6;
+  height: 800px;
+  @include background(linear-gradient(top, rgba(#F6F6F6, 0), #FCFCFC), linear-gradient(top, rgba(#F6F6F6, 1), rgba(#F6F6F6, 1) $linespace, #EAEAEA $linespace, #EAEAEA $linespace + 1px));
+
+  background-size: 100%, 100% $linespace + 1px;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+}
+
+.notepad:before {
+  content: '';
+  height: 47px;
+  width: 100%;
+  position: absolute;
+  top: -47px;
+  left: 0;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2065/paper_1.jpg');
+  box-shadow: 0 10px 4px rgba(black, 0.2);
+  z-index: -1;
+}
+
+#title {
+  font-family: 'Schoolbell', cursive;
+  font-size: 45px;
+}
+ p{
+   text-align: left;
+   line-height: 22px;
+   font-family: 'Gelasio', serif;
+ }
