@@ -1,0 +1,33 @@
+body{
+  background-color: orange;
+}
+
+
+@font-face {
+  font-family: 'Gloria Hallelujah';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gloria Hallelujah'), local('GloriaHallelujah'), url(https://fonts.gstatic.com/s/gloriahallelujah/v12/LYjYdHv3kUk9BMV96EIswT9DIbW-MIS11zY.ttf) format('truetype');
+}
+chalk-board {
+  font-size: 2em;
+  margin-bottom: 2rem;
+}
+chalk-board.custom {
+  --board-color: #666;
+  --frame-color: #ddd;
+  color: yellow;
+}
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*,
+*::before,
+*::after {
+  box-sizing: auto;
+}
+h1{
+  font-size: 14px;
+  font-family: Roboto;
+}

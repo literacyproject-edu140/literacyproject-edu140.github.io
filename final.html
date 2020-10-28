@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="final.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+  <a href="index.html"><-- go back</a>
+<main>
+  <chalk-board>
+    <p>Empowerment through Learning</p>
+    <br>
+    <h1>After my first year of college, I realized how I often felt underrepresented in my computer science classes and wanted to emerge myself in a community of women studying computer science. An organization in particular that has substantially impacted me in college is the Society of Women Engineers. Through this organization, I was able to learn more about my professional goals, meet other amazing women, and most significantly, educate the younger generation of women interested in pursuing a career in the tech industry. In agreement with the local middle school near my college, our club would set up workshops for middle school girls interested in robotics and programming.</h1>
+    <br>
+    <h1>My desire to get involved in an organization dedicated for women in computer science was entirely due to the fact that I didn’t find students who looked like myself in my classes. My community college had a 25% enrollment for female students in computer science classes and often, they weren’t enrolled in my classes. I found it difficult to fit in and make study groups with my peers, often calling for lonely study sessions in the library. The culture and cultural expectations of the classroom did not align with my identity, being a woman of color, making it difficult to believe I belonged. In accordance with the teachings of Gloria Ladson-Billings, a culturally conscious classroom space is one in which “respects and uses the reality, history, and perspectives of students as an integral part of educational practice,” (Ladson-Billings, 160). This underrepresentation served as a unique learning environment, feeling as if my abilities were representative of the female population’s ability to study computer science.</h1>
+    <br>
+    <h1>Having these negative experiences provided a framework for how I wanted to teach the middle school workshops. I wanted to provide a safe space for students to explore their creativity and curiosity within the field of tech, all while recognizing the need to feel their culture and identity are represented. My club members and I would visit the middle school weekly to teach curriculum surrounding introductory ideas in computing and robotics, spending the week prior to plan and create curriculum. The after school program by nature recognized the student’s identity of being female, but I wanted to ensure our club was emphasizing inclusivity from all backgrounds. As a result, my club members and I included a presentation on the first workshop showcasing successful women in tech from all ethnic backgrounds. We would continue to share each woman's story briefly before the beginning of each workshop to serve as a reminder that any background can succeed in tech and their identity is welcomed in this space.</h1>
+    <br>
+    <h1>A concept touched upon in class was Lev Vygotsky’s theory of the zone of proximal development, an idea that defines the space in between a student’s knowledge and the knowledge they are yet to possess. According to Vygotsky, it is the “distance between the actual developmental level as determined by independent problem solving and the level of potential development as determined through problem solving under adult guidance or in collaboration with more capable peers,” (Vygotsky, 9). This theory emphasizes the potential a student has yet to unlock that can be obtained under the guidance of another. Our workshops were split into two parts—lecture-style instruction and a discussion, in which students would get time to ask questions on material they didn’t understand. Due to the small class size, my partner and I were able to provide one-on-one help to each student, bridging the gap between the zone of proximal development. Each student had an end of the quarter project to demonstrate their knowledge of the course, creating web pages and small scale robotic projects.</h1>
+
+  </chalk-board>
+
+
+</main>
+
+<template id="chalk-board">
+  <style>
+    /*
+      NOTE: This import doesn't work in Chrome or Firefox 63. I'm not sure why.
+      Safari works just fine, though.
+    */
+    @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+    :host {
+      /* background color of the chalk board */
+      --board-color: #3b653d;
+      /* frame and tray color */
+      --frame-color: tan;
+
+      /* board shadow */
+      box-shadow: 0 8px 8px -4px #555;
+      /* chalk color */
+      color: snow;
+      /* override browser-default of inline */
+      display: block;
+      /* set a default font on the element */
+      font-family: 'Gloria Hallelujah', 'Comic Sans MS', 'Comic Sans', cursive;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    #frame {
+      background-color: var(--board-color);
+      border-color: var(--frame-color);
+      border-style: solid;
+      border-width: 0.5rem 0.5rem 1rem 0.5rem;
+      /* set up some inset shadows to give it some depth */
+      box-shadow:
+        inset 0 2px 0 -1px rgba(0, 0, 0, 0.15),
+        inset 2px 0 0 -1px rgba(0, 0, 0, 0.15),
+        inset -2px 0 0 -1px rgba(0, 0, 0, 0.15),
+        inset 0 2px 1px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* writing surface */
+    #surface {
+      flex-grow: 1;
+      padding: 0.75em 1em;
+    }
+
+    #tray {
+      align-items: flex-end;
+      display: flex;
+      position: relative;
+    }
+    /* lip and shadow */
+    #tray::after {
+      background-image: linear-gradient(to bottom,
+        transparent 4px,
+        rgba(0, 0, 0, 0.3) 4px,
+        transparent
+      );
+      border-top: 1px solid rgba(0, 0, 0, 0.15);
+      bottom: -1rem;
+      content: '';
+      display: block;
+      height: 1rem;
+      left: -0.5rem;
+      position: absolute;
+      right: -0.5rem;
+    }
+
+    #eraser {
+      background-color: #333;
+      border-radius: 0 0 4px 4px;
+      height: 0.75em;
+      position: absolute;
+      right: 5%;
+      width: 2em;
+    }
+    /* eraser handle */
+    #eraser:before {
+      background-color: #222;
+      border-radius: 4px;
+      content: '';
+      display: block;
+      height: 0.25em;
+      margin: 0 -2px;
+    }
+
+    #chalk {
+      position: absolute;
+      background-color: currentColor; /* match text color */
+      display: block;
+      height: 6px;
+      width: 1.5em;
+      right: 8%;
+    }
+  </style>
+
+  <div id="frame">
+    <div id="surface">
+      <slot></slot>
+    </div>
+    <div id="tray">
+      <div id="eraser"></div>
+      <div id="chalk"></div>
+    </div>
+  </div>
+</template>
+<!-- partial -->
+  <script  src="final.js"></script>
+
+</body>
+</html>
